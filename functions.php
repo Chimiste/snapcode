@@ -39,6 +39,20 @@
      
     return $uname;
  }
+ 
+ /**
+   * @Scrapper::isUrlOk()
+   * @access:public
+   * @Author:Bacar
+   * @params:$url
+   * @return
+   */
+	public function isUrlOk($url) {
+		
+	  $headers = @get_headers($url);
+	  if($headers[0] == 'HTTP/1.1 200 OK') return true;
+	  else return false;
+	}
 <?> 
  
  
